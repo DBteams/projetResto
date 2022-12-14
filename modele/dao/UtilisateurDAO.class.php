@@ -37,7 +37,7 @@ class UtilisateurDAO {
             
 
             // Si au moins un (et un seul) utilisateur (car login est unique), c'est que le mail existe dans la BDD
-            if ($stmt->rowCount() > 0) {
+            if ($ok) {
                 $enreg = $stmt->fetch(PDO::FETCH_ASSOC);
                 $idU = $enreg['idU'];
                 $lesRestosAimes = RestoDAO::getAimesByIdU($idU);
